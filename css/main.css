@@ -16,6 +16,12 @@ Primary use:
   src: url('../fonts/Poppins/Poppins-Regular.ttf'); 
 }
 
+#bouncing{
+  background-color: red !important;
+  border-color: red !important;
+  height: 60px;
+}
+
 @font-face {
   font-family: Poppins-Bold;
   src: url('../fonts/Poppins/Poppins-Bold.ttf'); 

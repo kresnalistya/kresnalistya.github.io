@@ -78,7 +78,10 @@
 
 				<p class="s2-txt3 p-t-18">
 					And don’t worry, <span style="font-size:14px !important;" class="m1-txt2">nyumbang</span> is welcome :p
+					
 				</p>
+
+				
 				<div class="contact">
 				  <div class="btn-group">
 				  	<img class="" src="images/mandiri.png" style="
@@ -106,6 +109,10 @@
 				    </button>
 				  </div>
 				</div>
+				<p class="s2-txt3 p-t-18">
+					Apa2an nih, ga diundang ga nyumbang lah !! 
+				</p>
+				<button id="bouncing" class="btn btn-primary">GAK NYUMBANG (KLIK)</button>
 					
 			</div>
 
@@ -132,12 +139,20 @@
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script>
-		// COPY TO CLIPBOARD
-// Attempts to use .execCommand('copy') on a created text field
-// Falls back to a selectable alert if not supported
-// Attempts to display status in Bootstrap tooltip
-// ------------------------------------------------------------------------------
+		var button = document.querySelector("#bouncing");
 
+		button.addEventListener("mouseover", function() {
+		  var changeTop = (Math.random() * ($(window).height() - $("#bouncing").height()));
+		  var changeLeft = (Math.random() * ($(window).width() - $("#bouncing").width()));
+		  $("#bouncing").css("margin-top", changeTop + "px");
+		  $("#bouncing").css("margin-left", changeLeft + "px");
+		});
+		button.addEventListener("click", function() {
+		  var changeTop = (Math.random() * ($(window).height() - $("#bouncing").height()));
+		  var changeLeft = (Math.random() * ($(window).width() - $("#bouncing").width()));
+		  $("#bouncing").css("margin-top", changeTop + "px");
+		  $("#bouncing").css("margin-left", changeLeft + "px");
+		});
 		function copyToClipboard(text, el) {
 		  var copyTest = document.queryCommandSupported('copy');
 		  var elOriginalText = el.attr('data-original-title');
@@ -163,6 +178,12 @@
 		}
 
 		$(document).ready(function() {
+			$("#bouncing").on('touchstart touchend', function(e) {
+	        	var changeTop = (Math.random() * ($(window).height() - $("#bouncing").height()));
+			  	var changeLeft = (Math.random() * ($(window).width() - $("#bouncing").width()));
+			  	$("#bouncing").css("margin-top", changeTop + "px");
+			  	$("#bouncing").css("margin-left", changeLeft + "px");
+		    });
 		  // Initialize
 		  // ---------------------------------------------------------------------
 
